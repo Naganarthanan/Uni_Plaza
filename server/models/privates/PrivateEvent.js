@@ -1,23 +1,23 @@
 const mongoose = require("mongoose");
 
+const linkSchema = new mongoose.Schema({
+  label: String,
+  link: String,
+});
+
 const privateEventSchema = new mongoose.Schema({
   privateID: { type: String, required: true },
   title: { type: String, required: true },
-  description: { type: String },
-  images: [{ type: String }],
-  date: { type: Date, required: true },
-  location: { type: String },
-  links: [
-    {
-      label: String,
-      link: String
-    }
-  ],
+  description: String,
+  images: [String],
+  date: Date,
+  location: String,
+  links: [linkSchema],
   contact: {
     email: { type: String, required: true },
-    phoneNum: Number
+    phone: Number,
   },
-  tags: [{ type: String }]
+  tags: [String],
 });
 
 module.exports = mongoose.model("PrivateEvent", privateEventSchema);

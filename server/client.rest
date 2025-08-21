@@ -1,1 +1,253 @@
+### Welcome to Uni-Plaza API
 GET http://localhost:4000/
+
+### Students API
+# Get all students
+GET http://localhost:4000/api/students
+
+# Get student by ID
+GET http://localhost:4000/api/students/{{studentId}}
+
+# Create new student
+POST http://localhost:4000/api/students
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "email": "john@example.com",
+  "password": "password123",
+  "mobileNumber": 1234567890
+}
+
+# Update student
+PUT http://localhost:4000/api/students/{{studentId}}
+Content-Type: application/json
+
+{
+  "username": "john_updated",
+  "email": "john.updated@example.com",
+  "mobileNumber": 9876543210
+}
+
+# Delete student
+DELETE http://localhost:4000/api/students/{{studentId}}
+
+### Club Events API
+# Get all club events
+GET http://localhost:4000/api/clubs/events
+
+# Get club event by ID
+GET http://localhost:4000/api/clubs/events/{{eventId}}
+
+# Create new club event
+POST http://localhost:4000/api/clubs/events
+Content-Type: application/json
+
+{
+  "clubname": "Tech Club",
+  "title": "Hackathon 2024",
+  "description": "Annual coding competition",
+  "images": ["image1.jpg", "image2.jpg"],
+  "date": "2024-03-15T10:00:00.000Z",
+  "location": "Main Campus",
+  "links": [
+    {
+      "label": "Registration",
+      "link": "https://example.com/register"
+    }
+  ],
+  "contact": {
+    "email": "techclub@university.edu",
+    "phoneNum": 1234567890
+  },
+  "universityName": "University of Technology",
+  "tags": ["coding", "competition", "hackathon"]
+}
+
+# Update club event
+PUT http://localhost:4000/api/clubs/events/{{eventId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Hackathon 2024",
+  "description": "Updated description"
+}
+
+# Delete club event
+DELETE http://localhost:4000/api/clubs/events/{{eventId}}
+
+### Club Products API
+# Get all club products
+GET http://localhost:4000/api/clubs/products
+
+# Get club product by ID
+GET http://localhost:4000/api/clubs/products/{{productId}}
+
+# Create new club product
+POST http://localhost:4000/api/clubs/products
+Content-Type: application/json
+
+{
+  "clubname": "Art Club",
+  "title": "Handmade Jewelry",
+  "description": "Beautiful handmade jewelry collection",
+  "images": ["jewelry1.jpg", "jewelry2.jpg"],
+  "date": "2024-03-10T14:00:00.000Z",
+  "location": "Art Center",
+  "links": [
+    {
+      "label": "Order Now",
+      "link": "https://example.com/order"
+    }
+  ],
+  "contact": {
+    "email": "artclub@university.edu",
+    "phoneNum": 9876543210
+  },
+  "universityName": "University of Arts",
+  "tags": ["jewelry", "handmade", "art"],
+  "price": 25.99
+}
+
+# Update club product
+PUT http://localhost:4000/api/clubs/products/{{productId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Handmade Jewelry",
+  "price": 29.99
+}
+
+# Delete club product
+DELETE http://localhost:4000/api/clubs/products/{{productId}}
+
+### Club Others API
+# Get all club others
+GET http://localhost:4000/api/clubs/others
+
+# Get club other by ID
+GET http://localhost:4000/api/clubs/others/{{otherId}}
+
+# Create new club other
+POST http://localhost:4000/api/clubs/others
+Content-Type: application/json
+
+{
+  "clubname": "Sports Club",
+  "title": "Basketball Tournament",
+  "description": "Inter-university basketball tournament",
+  "images": ["basketball1.jpg", "basketball2.jpg"],
+  "date": "2024-04-01T16:00:00.000Z",
+  "location": "Sports Complex",
+  "links": [
+    {
+      "label": "Tournament Info",
+      "link": "https://example.com/tournament"
+    }
+  ],
+  "contact": {
+    "email": "sportsclub@university.edu",
+    "phoneNum": 5551234567
+  },
+  "universityName": "University of Sports",
+  "tags": ["basketball", "tournament", "sports"],
+  "price": 15.00
+}
+
+# Update club other
+PUT http://localhost:4000/api/clubs/others/{{otherId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Basketball Tournament",
+  "price": 20.00
+}
+
+# Delete club other
+DELETE http://localhost:4000/api/clubs/others/{{otherId}}
+
+### Private Events API
+# Get all private events
+GET http://localhost:4000/api/privates/events
+
+# Get private event by ID
+GET http://localhost:4000/api/privates/events/{{eventId}}
+
+# Create new private event
+POST http://localhost:4000/api/privates/events
+Content-Type: application/json
+
+{
+  "privateID": "PRIV001",
+  "title": "Birthday Party",
+  "description": "Private birthday celebration",
+  "images": ["party1.jpg", "party2.jpg"],
+  "date": "2024-03-20T18:00:00.000Z",
+  "location": "Private Venue",
+  "links": [
+    {
+      "label": "RSVP",
+      "link": "https://example.com/rsvp"
+    }
+  ],
+  "contact": {
+    "email": "host@example.com",
+    "phone": 1234567890
+  },
+  "tags": ["birthday", "party", "celebration"]
+}
+
+# Update private event
+PUT http://localhost:4000/api/privates/events/{{eventId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Birthday Party",
+  "description": "Updated party description"
+}
+
+# Delete private event
+DELETE http://localhost:4000/api/privates/events/{{eventId}}
+
+### Private Others API
+# Get all private others
+GET http://localhost:4000/api/privates/others
+
+# Get private other by ID
+GET http://localhost:4000/api/privates/others/{{otherId}}
+
+# Create new private other
+POST http://localhost:4000/api/privates/others
+Content-Type: application/json
+
+{
+  "privateID": "PRIV002",
+  "title": "Study Group",
+  "description": "Private study session",
+  "images": ["study1.jpg"],
+  "date": "2024-03-25T19:00:00.000Z",
+  "location": "Library",
+  "links": [
+    {
+      "label": "Join Session",
+      "link": "https://example.com/join"
+    }
+  ],
+  "contact": {
+    "email": "organizer@example.com",
+    "phoneNum": 9876543210
+  },
+  "tags": ["study", "group", "academic"]
+}
+
+# Update private other
+PUT http://localhost:4000/api/privates/others/{{otherId}}
+Content-Type: application/json
+
+{
+  "title": "Updated Study Group",
+  "description": "Updated study session details"
+}
+
+# Delete private other
+DELETE http://localhost:4000/api/privates/others/{{otherId}}
